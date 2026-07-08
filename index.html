@@ -8,7 +8,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="/_sdk/element_sdk.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&amp;family=Nunito:wght@400;600;700&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght=500;700;800&amp;family=Nunito:wght=400;600;700&amp;display=swap" rel="stylesheet">
   <style>
     body {
       box-sizing: border-box;
@@ -276,7 +276,7 @@
             { get: () => config.secondary_action || defaultConfig.secondary_action, set: (v) => { config.secondary_action = v; window.elementSdk.setConfig({ secondary_action: v }); } }
           ],
           fontEditable: { get: () => config.font_family || defaultConfig.font_family, set: (v) => { config.font_family = v; window.elementSdk.setConfig({ font_family: v }); } },
-          fontSizeable: { get: () => config.font_size || defaultConfig.font_size; set: (v) => { config.font_size = v; window.elementSdk.setConfig({ font_size: v }); } }
+          fontSizeable: { get: () => config.font_size || defaultConfig.font_size, set: (v) => { config.font_size = v; window.elementSdk.setConfig({ font_size: v }); } }
         }),
         mapToEditPanelValues: (config) => new Map([
           ['page_title', config.page_title || defaultConfig.page_title],

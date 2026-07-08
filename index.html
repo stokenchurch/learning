@@ -74,6 +74,7 @@
     .tile:nth-child(15) { animation-delay: 0.75s; }
     .tile:nth-child(16) { animation-delay: 0.8s; }
     .tile:nth-child(17) { animation-delay: 0.85s; }
+    .tile:nth-child(18) { animation-delay: 0.9s; }
 
     .tile-icon {
       font-size: 2.8rem;
@@ -116,8 +117,8 @@
     <div class="blob-bg" style="width:250px;height:250px;bottom:10%;right:-60px;background:#7EC8E3;"></div>
     <div class="blob-bg" style="width:200px;height:200px;top:40%;left:50%;background:#FFD93D;"></div>
     <div class="relative z-10 w-full max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
-     <header class="text-center mb-10">
-      <div class="inline-block relative">
+      <header class="text-center mb-10">
+       <div class="inline-block relative">
   <span class="star-decor text-3xl" style="top:-14px;left:-24px;">⭐</span> 
   <span class="star-decor text-xl" style="top:-8px;right:-20px;">✨</span>
 
@@ -125,12 +126,12 @@
     Stokenchurch Primary School Learning Portal
   </h1>
 </div>
-      <p id="page-subtitle" class="mt-3 text-lg sm:text-xl font-semibold" style="color: #FFFFFF;">Click a tile to start exploring! 🚀</p>
-     </header>
-     <main>
-      <nav aria-label="Learning websites">
-       <ul id="tile-grid" class="grid gap-4 sm:gap-5 lg:gap-6 list-none p-0 m-0 auto-rows-fr" style="grid-template-columns: repeat(6, 1fr);">
-        
+       <p id="page-subtitle" class="mt-3 text-lg sm:text-xl font-semibold" style="color: #FFFFFF;">Click a tile to start exploring! 🚀</p>
+      </header>
+      <main>
+       <nav aria-label="Learning websites">
+        <ul id="tile-grid" class="grid gap-4 sm:gap-5 lg:gap-6 list-none p-0 m-0 auto-rows-fr" style="grid-template-columns: repeat(6, 1fr);">
+         
 <li class="w-full"><a href="https://barefootgames.org/" target="_blank" rel="noopener noreferrer" class="tile block rounded-2xl p-5 text-center no-underline cursor-pointer flex flex-col h-full" style="background: var(--card-color); border: 3px solid #2E7D32; color: var(--text-color);">
     <div class="tile-icon float-icon mb-3" style="display: flex; align-items: center; justify-content: center;"><img src="https://www.google.com/s2/favicons?sz=128&amp;domain_url=https%3A%2F%2Fbarefootgames.org" alt="Barefoot Games" loading="lazy" style="max-width: 64px; max-height: 64px; width: 64px; height: 64px;" onerror="this.style.display='none'; this.parentElement.textContent='🎮';">
     </div><h2 class="portal-title text-base sm:text-lg font-bold leading-tight break-words">Barefoot Games</h2><p class="text-xs sm:text-sm mt-1 opacity-70">Educational games</p></a></li>
@@ -144,7 +145,7 @@
     </div><h2 class="portal-title text-base sm:text-lg font-bold leading-snug break-words">CBBC Games</h2><p class="text-xs sm:text-sm mt-1 opacity-70">CBBC Games</p></a></li>
 
 <li class="w-full"><a href="https://www.bbc.co.uk/games/interactive/activity-dance-mat-typing" target="_blank" rel="noopener noreferrer" class="tile block rounded-2xl p-5 text-center no-underline cursor-pointer flex flex-col h-full" style="background: var(--card-color); border: 3px solid #2E7D32; color: var(--text-color);">
-    <div class="tile-icon float-icon mb-3" style="display: flex; align-items: center; justify-content: center;"><img src="https://www.google.com/s2/favicons?sz=128&amp;domain_url=https%3A%2F%2Fwww.bbc.co.uk" alt="Dance Mat Typing" loading="lazy" style="max-width: 64px; max-height: 64px; width: 64px; height: 64px;" onerror="this.style.display='none'; this.parentElement.textContent='⌨️';">
+    <div class="tile-icon float-icon mb-3" style="display: flex; align-items: center; justify-content: center;"><img src="https://ichef.bbci.co.uk/images/ic/1200xn/p07m9zvq.jpg" alt="Dance Mat Typing" loading="lazy" style="max-width: 64px; max-height: 64px; width: 64px; height: 64px;" onerror="this.style.display='none'; this.parentElement.textContent='⌨️';">
     </div><h2 class="portal-title text-base sm:text-lg font-bold leading-snug break-words">Dance Mat Typing</h2><p class="text-xs sm:text-sm mt-1 opacity-70">Typing skills</p></a></li>
 
 <li class="w-full"><a href="https://google.com/" target="_blank" rel="noopener noreferrer" class="tile block rounded-2xl p-5 text-center no-underline cursor-pointer flex flex-col h-full" style="background: var(--card-color); border: 3px solid #81C784; color: var(--text-color);">
@@ -197,13 +198,17 @@
 
 <li class="w-full"><a href="https://twinkl.com/learn" target="_blank" rel="noopener noreferrer" class="tile block rounded-2xl p-5 text-center no-underline cursor-pointer flex flex-col h-full" style="background: var(--card-color); border: 3px solid #81C784; color: var(--text-color);">
     <div class="tile-icon float-icon mb-3" style="display: flex; align-items: center; justify-content: center;"><img src="https://www.google.com/s2/favicons?sz=128&amp;domain_url=https%3A%2F%2Ftwinkl.com" alt="Twinkl Go" loading="lazy" style="max-width: 64px; max-height: 64px; width: 64px; height: 64px;" onerror="this.style.display='none'; this.parentElement.textContent='📚';">
-    </div><h2 class="portal-title text-base sm:text-lg font-bold leading-snug break-words">Twinkl Go</h2><p class="text-xs sm:text-sm mt-1 opacity-70">Learning resources</p></a></li>        
-       </ul>
-      </nav>
-     </main>
-     <footer class="text-center mt-10 pb-6">
-      <p class="text-lg sm:text-xl font-black" style="line-height: 1.6; letter-spacing: 0.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"><span style="color: #81C784;">READY</span> <span style="color: #FFFFFF;"> · </span> <span style="color: #FFFFFF;">RESPECTFUL</span> <span style="color: #81C784;"> · </span> <span style="color: #81C784;">SAFE</span> <span style="color: #FFFFFF;"> · </span> <span style="color: #FFFFFF;">RESILIENT</span> <span style="color: #81C784;"> · </span> <span style="color: #81C784;">CURIOUS</span> <span style="color: #FFFFFF;"> · </span> <span style="color: #FFFFFF;">CONFIDENT</span> <span style="color: #81C784;"> · </span> <span style="color: #81C784;">INDEPENDENT</span> <span style="color: #FFFFFF;"> · </span> <span style="color: #FFFFFF;">SUCCESSFUL</span></p>
-     </footer>
+    </div><h2 class="portal-title text-base sm:text-lg font-bold leading-snug break-words">Twinkl Go</h2><p class="text-xs sm:text-sm mt-1 opacity-70">Learning resources</p></a></li>           
+
+<li class="w-full"><a href="https://www.typinggames.zone/type-the-alphabet" target="_blank" rel="noopener noreferrer" class="tile block rounded-2xl p-5 text-center no-underline cursor-pointer flex flex-col h-full" style="background: var(--card-color); border: 3px solid #2E7D32; color: var(--text-color);">
+    <div class="tile-icon float-icon mb-3" style="display: flex; align-items: center; justify-content: center;"><img src="https://www.typinggames.zone/web/apple-touch-icon.png" alt="Typing Games" loading="lazy" style="max-width: 64px; max-height: 64px; width: 64px; height: 64px;" onerror="this.style.display='none'; this.parentElement.textContent='⌨️';">
+    </div><h2 class="portal-title text-base sm:text-lg font-bold leading-snug break-words">Typing Games</h2><p class="text-xs sm:text-sm mt-1 opacity-70">Type the alphabet</p></a></li>        
+        </ul>
+       </nav>
+      </main>
+      <footer class="text-center mt-10 pb-6">
+       <p class="text-lg sm:text-xl font-black" style="line-height: 1.6; letter-spacing: 0.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"><span style="color: #81C784;">READY</span> <span style="color: #FFFFFF;"> · </span> <span style="color: #FFFFFF;">RESPECTFUL</span> <span style="color: #81C784;"> · </span> <span style="color: #81C784;">SAFE</span> <span style="color: #FFFFFF;"> · </span> <span style="color: #FFFFFF;">RESILIENT</span> <span style="color: #81C784;"> · </span> <span style="color: #81C784;">CURIOUS</span> <span style="color: #FFFFFF;"> · </span> <span style="color: #FFFFFF;">CONFIDENT</span> <span style="color: #81C784;"> · </span> <span style="color: #81C784;">INDEPENDENT</span> <span style="color: #FFFFFF;"> · </span> <span style="color: #FFFFFF;">SUCCESSFUL</span></p>
+      </footer>
     </div>
   </div>
   <script>

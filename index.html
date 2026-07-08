@@ -17,7 +17,7 @@
     :root {
       --bg-color: #1B5E20;
       --card-color: #FFFFFF;
-      --text-color: #81C784;
+      --text-color: #1B5E20;
       --primary-action: #2E7D32;
       --secondary-action: #81C784;
     }
@@ -212,75 +212,25 @@
     </div>
   </div>
   <script>
-    const defaultConfig = {
+    // Safeguarded basic configuration fallback structure 
+    const config = {
       background_color: '#1B5E20',
       card_color: '#FFFFFF',
       text_color: '#1B5E20',
-      primary_action: '#2E7D32',
-      secondary_action: '#81C784',
-      font_family: 'Baloo 2',
-      font_size: 16,
       page_title: 'Stokenchurch Primary School Learning Portal',
       page_subtitle: 'Click a tile to start exploring! 🚀'
     };
 
-    function applyConfig(config) {
-      const root = document.documentElement.style;
-      const bg = config.background_color || defaultConfig.background_color;
-      const card = config.card_color || defaultConfig.card_color;
-      const text = config.text_color || defaultConfig.text_color;
-      const primary = config.primary_action || defaultConfig.primary_action;
-      const secondary = config.secondary_action || defaultConfig.secondary_action;
-
-      root.setProperty('--bg-color', bg);
-      root.setProperty('--card-color', card);
-      root.setProperty('--text-color', text);
-      root.setProperty('--primary-action', primary);
-      root.setProperty('--secondary-action', secondary);
-
-      const titleEl = document.getElementById('page-title');
-      const subtitleEl = document.getElementById('page-subtitle');
-      if (titleEl) titleEl.textContent = config.page_title || defaultConfig.page_title;
-      if (subtitleEl) subtitleEl.textContent = config.page_subtitle || defaultConfig.page_subtitle;
-
-      const customFont = config.font_family || defaultConfig.font_family;
-      const titleStack = `${customFont}, cursive`;
-      const bodyStack = `Nunito, ${customFont}, sans-serif`;
-
-      document.querySelectorAll('.portal-title').forEach(el => { el.style.fontFamily = titleStack; });
-      document.querySelector('.portal-wrapper').style.fontFamily = bodyStack;
-
-      const baseSize = config.font_size || defaultConfig.font_size;
-      if (titleEl) titleEl.style.fontSize = `${baseSize * 3}px`;
-      if (subtitleEl) subtitleEl.style.fontSize = `${baseSize * 1.25}px`;
-
-      document.querySelectorAll('.tile h2').forEach(el => { el.style.fontSize = `${baseSize * 1.1}px`; });
-      document.querySelectorAll('.tile p').forEach(el => { el.style.fontSize = `${baseSize * 0.8}px`; });
-
-      document.querySelectorAll('.tile').forEach((tile) => {
-        tile.style.background = card;
-        tile.style.color = text;
-      });
-    }
-
     if (window.elementSdk) {
       window.elementSdk.init({
-        defaultConfig: defaultConfig,
-        onConfigChange: async (config) => { applyConfig(config); },
-        mapToCapabilities: (config) => ({
-          recolorables: [
-            { get: () => config.background_color || defaultConfig.background_color, set: (v) => { config.background_color = v; window.elementSdk.setConfig({ background_color: v }); } },
-            { get: () => config.card_color || defaultConfig.card_color, set: (v) => { config.card_color = v; window.elementSdk.setConfig({ card_color: v }); } },
-            { get: () => config.text_color || defaultConfig.text_color, set: (v) => { config.text_color = v; window.elementSdk.setConfig({ text_color: v }); } },
-            { get: () => config.primary_action || defaultConfig.primary_action, set: (v) => { config.primary_action = v; window.elementSdk.setConfig({ primary_action: v }); } },
-            { get: () => config.secondary_action || defaultConfig.secondary_action, set: (v) => { config.secondary_action = v; window.elementSdk.setConfig({ secondary_action: v }); } }
-          ],
-          fontEditable: { get: () => config.font_family || defaultConfig.font_family, set: (v) => { config.font_family = v; window.elementSdk.setConfig({ font_family: v }); } },
-          fontSizeable: { get: () => config.font_size || defaultConfig.font_size, set: (v) => { config.font_size = v; window.elementSdk.setConfig({ font_size: v }); } }
-        }),
-        mapToEditPanelValues: (config) => new Map([
-          ['page_title', config.page_title || defaultConfig.page_title],
-          ['page_subtitle', config.page_subtitle || defaultConfig.page_subtitle]
+        defaultConfig: config,
+        onConfigChange: async (newConfig) => {
+          if(newConfig.background_color) document.getElementById('app-wrapper').style.backgroundColor = newConfig.background_color;
+        },
+        mapToCapabilities: (c) => ({ recolorables: [] }),
+        mapToEditPanelValues: (c) => new Map([
+          ['page_title', c.page_title || config.page_title],
+          ['page_subtitle', c.page_subtitle || config.page_subtitle]
         ])
       });
     }

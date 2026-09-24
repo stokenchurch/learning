@@ -43,44 +43,44 @@
     }
 
     .tile:hover {
-      transform: translateY(-6px) scale(1.03);
-      box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+      transform: translateY(-4px) scale(1.02);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
     }
 
     .tile:active {
-      transform: translateY(-2px) scale(0.98);
+      transform: translateY(-1px) scale(0.98);
     }
 
     @keyframes popIn {
-      0% { opacity: 0; transform: scale(0.7) translateY(20px); }
+      0% { opacity: 0; transform: scale(0.7) translateY(15px); }
       100% { opacity: 1; transform: scale(1) translateY(0); }
     }
 
-    /* Animation delays for all 24 tiles */
-    .tile:nth-child(1) { animation-delay: 0.04s; }
-    .tile:nth-child(2) { animation-delay: 0.08s; }
-    .tile:nth-child(3) { animation-delay: 0.12s; }
-    .tile:nth-child(4) { animation-delay: 0.16s; }
-    .tile:nth-child(5) { animation-delay: 0.20s; }
-    .tile:nth-child(6) { animation-delay: 0.24s; }
-    .tile:nth-child(7) { animation-delay: 0.28s; }
-    .tile:nth-child(8) { animation-delay: 0.32s; }
-    .tile:nth-child(9) { animation-delay: 0.36s; }
-    .tile:nth-child(10) { animation-delay: 0.40s; }
-    .tile:nth-child(11) { animation-delay: 0.44s; }
-    .tile:nth-child(12) { animation-delay: 0.48s; }
-    .tile:nth-child(13) { animation-delay: 0.52s; }
-    .tile:nth-child(14) { animation-delay: 0.56s; }
-    .tile:nth-child(15) { animation-delay: 0.60s; }
-    .tile:nth-child(16) { animation-delay: 0.64s; }
-    .tile:nth-child(17) { animation-delay: 0.68s; }
-    .tile:nth-child(18) { animation-delay: 0.72s; }
-    .tile:nth-child(19) { animation-delay: 0.76s; }
-    .tile:nth-child(20) { animation-delay: 0.80s; }
-    .tile:nth-child(21) { animation-delay: 0.84s; }
-    .tile:nth-child(22) { animation-delay: 0.88s; }
-    .tile:nth-child(23) { animation-delay: 0.92s; }
-    .tile:nth-child(24) { animation-delay: 0.96s; }
+    /* Staggered animation delays for 24 tiles */
+    .tile:nth-child(1) { animation-delay: 0.03s; }
+    .tile:nth-child(2) { animation-delay: 0.06s; }
+    .tile:nth-child(3) { animation-delay: 0.09s; }
+    .tile:nth-child(4) { animation-delay: 0.12s; }
+    .tile:nth-child(5) { animation-delay: 0.15s; }
+    .tile:nth-child(6) { animation-delay: 0.18s; }
+    .tile:nth-child(7) { animation-delay: 0.21s; }
+    .tile:nth-child(8) { animation-delay: 0.24s; }
+    .tile:nth-child(9) { animation-delay: 0.27s; }
+    .tile:nth-child(10) { animation-delay: 0.30s; }
+    .tile:nth-child(11) { animation-delay: 0.33s; }
+    .tile:nth-child(12) { animation-delay: 0.36s; }
+    .tile:nth-child(13) { animation-delay: 0.39s; }
+    .tile:nth-child(14) { animation-delay: 0.42s; }
+    .tile:nth-child(15) { animation-delay: 0.45s; }
+    .tile:nth-child(16) { animation-delay: 0.48s; }
+    .tile:nth-child(17) { animation-delay: 0.51s; }
+    .tile:nth-child(18) { animation-delay: 0.54s; }
+    .tile:nth-child(19) { animation-delay: 0.57s; }
+    .tile:nth-child(20) { animation-delay: 0.60s; }
+    .tile:nth-child(21) { animation-delay: 0.63s; }
+    .tile:nth-child(22) { animation-delay: 0.66s; }
+    .tile:nth-child(23) { animation-delay: 0.69s; }
+    .tile:nth-child(24) { animation-delay: 0.72s; }
 
     .tile-icon {
       font-size: 2.2rem;
@@ -98,7 +98,7 @@
 
     @keyframes float {
       0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-8px); }
+      50% { transform: translateY(-5px); }
     }
 
     .float-icon {
@@ -119,155 +119,161 @@
   <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
  </head>
  <body class="h-full">
-  <div class="portal-wrapper overflow-auto" id="app-wrapper" style="background-color: var(--bg-color);">
+  <div class="portal-wrapper overflow-auto min-h-screen flex flex-col justify-between" id="app-wrapper" style="background-color: var(--bg-color);">
     <div class="blob-bg" style="width:300px;height:300px;top:-50px;left:-80px;background:#FF6B6B;"></div>
     <div class="blob-bg" style="width:250px;height:250px;bottom:10%;right:-60px;background:#7EC8E3;"></div>
     <div class="blob-bg" style="width:200px;height:200px;top:40%;left:50%;background:#FFD93D;"></div>
-    <div class="relative z-10 w-full max-w-7xl mx-auto px-4 py-4 sm:px-6 lg:px-8">
+    
+    <div class="relative z-10 w-full max-w-[1400px] mx-auto px-4 py-4 sm:px-6 lg:px-8 flex-grow flex flex-col justify-between">
       
-      <header class="text-center mb-5">
+      <!-- HEADER -->
+      <header class="text-center mb-3">
         <div class="inline-block relative">
-          <span class="star-decor text-3xl" style="top:-14px;left:-24px;">⭐</span> 
-          <span class="star-decor text-xl" style="top:-8px;right:-20px;">✨</span>
-
+          <span class="star-decor text-2xl" style="top:-10px;left:-20px;">⭐</span> 
+          <span class="star-decor text-lg" style="top:-6px;right:-16px;">✨</span>
           <h1 id="page-title" class="portal-title text-2xl sm:text-3xl lg:text-4xl font-extrabold leading-tight" style="color: #81C784;">
             Stokenchurch Primary School Learning Portal
           </h1>
         </div>
-        <p id="page-subtitle" class="mt-1 text-base sm:text-lg font-semibold" style="color: #FFFFFF;">Click a tile to start exploring! 🚀</p>
+        <p id="page-subtitle" class="mt-1 text-sm sm:text-base font-semibold" style="color: #FFFFFF;">Click a tile to start exploring! 🚀</p>
       </header>
 
-      <main>
-        <nav aria-label="Learning websites">
-         <ul id="tile-grid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4 list-none p-0 m-0 auto-rows-fr">
+      <!-- MAIN TILES GRID (4 ROWS x 6 COLUMNS ALPHABETICAL) -->
+      <main class="flex-grow flex items-center">
+        <nav aria-label="Learning websites" class="w-full">
+         <ul id="tile-grid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-3.5 list-none p-0 m-0 auto-rows-fr">
           
           <!-- 1. Barefoot Games -->
-          <li class="w-full"><a href="https://barefootgames.org/" target="_blank" rel="noopener noreferrer" class="tile block rounded-2xl p-3 sm:p-3.5 text-center no-underline cursor-pointer flex flex-col h-full justify-center items-center" style="background: var(--card-color); border: 3px solid #2E7D32; color: var(--text-color);">
-            <div class="tile-icon float-icon mb-1.5 flex items-center justify-center"><img src="https://www.google.com/s2/favicons?sz=128&amp;domain_url=https%3A%2F%2Fbarefootgames.org" alt="Barefoot Games" loading="lazy" style="max-width: 48px; max-height: 48px; width: 48px; height: 48px;" onerror="this.style.display='none'; this.parentElement.textContent='🎮';">
-            </div><h2 class="portal-title text-sm sm:text-base font-bold leading-tight break-words">Barefoot Games</h2><p class="text-xs mt-0.5 opacity-70">Educational games</p></a></li>
+          <li class="w-full"><a href="https://barefootgames.org/" target="_blank" rel="noopener noreferrer" class="tile block rounded-2xl p-3 sm:p-3.5 text-center no-underline cursor-pointer flex flex-col justify-center items-center h-full" style="background: var(--card-color); border: 3px solid #2E7D32; color: var(--text-color);">
+              <div class="tile-icon float-icon mb-2 flex items-center justify-center"><img src="https://www.google.com/s2/favicons?sz=128&amp;domain_url=https%3A%2F%2Fbarefootgames.org" alt="Barefoot Games" loading="lazy" style="max-width: 48px; max-height: 48px; width: 48px; height: 48px;" onerror="this.style.display='none'; this.parentElement.textContent='🎮';">
+              </div><h2 class="portal-title text-sm sm:text-base font-bold leading-tight break-words">Barefoot Games</h2><p class="text-xs mt-0.5 opacity-70">Educational games</p></a></li>
 
           <!-- 2. Canva -->
-          <li class="w-full"><a href="https://canva.com/" target="_blank" rel="noopener noreferrer" class="tile block rounded-2xl p-3 sm:p-3.5 text-center no-underline cursor-pointer flex flex-col h-full justify-center items-center" style="background: var(--card-color); border: 3px solid #81C784; color: var(--text-color);">
-            <div class="tile-icon float-icon mb-1.5 flex items-center justify-center"><img src="https://www.google.com/s2/favicons?sz=64&amp;domain_url=http%3A%2F%2Fcanva.com" alt="Canva" loading="lazy" style="max-width: 48px; max-height: 48px; width: 48px; height: 48px;" onerror="this.style.display='none'; this.parentElement.textContent='🎨';">
-            </div><h2 class="portal-title text-sm sm:text-base font-bold leading-snug break-words">Canva</h2><p class="text-xs mt-0.5 opacity-70">Design</p></a></li>
+          <li class="w-full"><a href="https://canva.com/" target="_blank" rel="noopener noreferrer" class="tile block rounded-2xl p-3 sm:p-3.5 text-center no-underline cursor-pointer flex flex-col justify-center items-center h-full" style="background: var(--card-color); border: 3px solid #81C784; color: var(--text-color);">
+              <div class="tile-icon float-icon mb-2 flex items-center justify-center"><img src="https://www.google.com/s2/favicons?sz=64&amp;domain_url=http%3A%2F%2Fcanva.com" alt="Canva" loading="lazy" style="max-width: 48px; max-height: 48px; width: 48px; height: 48px;" onerror="this.style.display='none'; this.parentElement.textContent='🎨';">
+              </div><h2 class="portal-title text-sm sm:text-base font-bold leading-snug break-words">Canva</h2><p class="text-xs mt-0.5 opacity-70">Design</p></a></li>
 
-          <!-- 3. CBBC Games -->
-          <li class="w-full"><a href="https://www.bbc.co.uk/cbbc/games" target="_blank" rel="noopener noreferrer" class="tile block rounded-2xl p-3 sm:p-3.5 text-center no-underline cursor-pointer flex flex-col h-full justify-center items-center" style="background: var(--card-color); border: 3px solid #2E7D32; color: var(--text-color);">
-            <div class="tile-icon float-icon mb-1.5 flex items-center justify-center"><img src="https://www.google.com/s2/favicons?sz=128&amp;domain_url=https%3A%2F%2Fwww.bbc.co.uk%2Fcbbc%2Fgames" alt="CBBC Games" loading="lazy" style="max-width: 48px; max-height: 48px; width: 48px; height: 48px;" onerror="this.style.display='none'; this.parentElement.textContent='🕹️';">
-            </div><h2 class="portal-title text-sm sm:text-base font-bold leading-snug break-words">CBBC Games</h2><p class="text-xs mt-0.5 opacity-70">CBBC Games</p></a></li>
+          <!-- 3. Cbeebies Games -->
+          <li class="w-full"><a href="https://www.bbc.co.uk/cbeebies/games" target="_blank" rel="noopener noreferrer" class="tile block rounded-2xl p-3 sm:p-3.5 text-center no-underline cursor-pointer flex flex-col justify-center items-center h-full" style="background: var(--card-color); border: 3px solid #2E7D32; color: var(--text-color);">
+              <div class="tile-icon float-icon mb-2 flex items-center justify-center"><img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/508b7216-4874-49b9-a145-9d35bbf65a83/d8r8ozf-4dfd28f1-a26f-4b47-a4a2-c6d7d0e488a5.jpg/v1/fill/w_581,h_581,q_75,strp/cbeebies_logo_by_danbaz_d8r8ozf-fullview.jpg" alt="Cbeebies Games" loading="lazy" style="max-width: 48px; max-height: 48px; width: 48px; height: 48px;" onerror="this.style.display='none'; this.parentElement.textContent='👶';">
+              </div><h2 class="portal-title text-sm sm:text-base font-bold leading-snug break-words">Cbeebies Games</h2><p class="text-xs mt-0.5 opacity-70">Fun games</p></a></li>
 
-          <!-- 4. Cbeebies Games -->
-          <li class="w-full"><a href="https://www.bbc.co.uk/cbeebies/games" target="_blank" rel="noopener noreferrer" class="tile block rounded-2xl p-3 sm:p-3.5 text-center no-underline cursor-pointer flex flex-col h-full justify-center items-center" style="background: var(--card-color); border: 3px solid #81C784; color: var(--text-color);">
-            <div class="tile-icon float-icon mb-1.5 flex items-center justify-center"><img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/508b7216-4874-49b9-a145-9d35bbf65a83/d8r8ozf-4dfd28f1-a26f-4b47-a4a2-c6d7d0e488a5.jpg/v1/fill/w_581,h_581,q_75,strp/cbeebies_logo_by_danbaz_d8r8ozf-fullview.jpg" alt="Cbeebies Games" loading="lazy" style="max-width: 48px; max-height: 48px; width: 48px; height: 48px;" onerror="this.style.display='none'; this.parentElement.textContent='🎲';">
-            </div><h2 class="portal-title text-sm sm:text-base font-bold leading-snug break-words">Cbeebies Games</h2><p class="text-xs mt-0.5 opacity-70">Cbeebies Games</p></a></li>
+          <!-- 4. CBBC Games -->
+          <li class="w-full"><a href="https://www.bbc.co.uk/cbbc/games" target="_blank" rel="noopener noreferrer" class="tile block rounded-2xl p-3 sm:p-3.5 text-center no-underline cursor-pointer flex flex-col justify-center items-center h-full" style="background: var(--card-color); border: 3px solid #81C784; color: var(--text-color);">
+              <div class="tile-icon float-icon mb-2 flex items-center justify-center"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/CBBC_indigo_logo.svg" alt="CBBC Games" loading="lazy" style="max-width: 48px; max-height: 48px; width: 48px; height: 48px;" onerror="this.style.display='none'; this.parentElement.textContent='🕹️';">
+              </div><h2 class="portal-title text-sm sm:text-base font-bold leading-snug break-words">CBBC Games</h2><p class="text-xs mt-0.5 opacity-70">CBBC Games</p></a></li>
 
           <!-- 5. Chrome Music Lab -->
-          <li class="w-full"><a href="https://musiclab.chromeexperiments.com/" target="_blank" rel="noopener noreferrer" class="tile block rounded-2xl p-3 sm:p-3.5 text-center no-underline cursor-pointer flex flex-col h-full justify-center items-center" style="background: var(--card-color); border: 3px solid #2E7D32; color: var(--text-color);">
-            <div class="tile-icon float-icon mb-1.5 flex items-center justify-center"><img src="https://musiclab.chromeexperiments.com/static/MusicBox_32.ico.png" alt="Chrome Music Lab" loading="lazy" style="max-width: 48px; max-height: 48px; width: 48px; height: 48px;" onerror="this.style.display='none'; this.parentElement.textContent='🎵';">
-            </div><h2 class="portal-title text-sm sm:text-base font-bold leading-snug break-words">Chrome Music Lab</h2><p class="text-xs mt-0.5 opacity-70">Create music</p></a></li>
+          <li class="w-full"><a href="https://musiclab.chromeexperiments.com/" target="_blank" rel="noopener noreferrer" class="tile block rounded-2xl p-3 sm:p-3.5 text-center no-underline cursor-pointer flex flex-col justify-center items-center h-full" style="background: var(--card-color); border: 3px solid #2E7D32; color: var(--text-color);">
+              <div class="tile-icon float-icon mb-2 flex items-center justify-center"><img src="https://musiclab.chromeexperiments.com/static/MusicBox_32.ico.png" alt="Chrome Music Lab" loading="lazy" style="max-width: 48px; max-height: 48px; width: 48px; height: 48px;" onerror="this.style.display='none'; this.parentElement.textContent='🎵';">
+              </div><h2 class="portal-title text-sm sm:text-base font-bold leading-snug break-words">Chrome Music Lab</h2><p class="text-xs mt-0.5 opacity-70">Create music</p></a></li>
 
-          <!-- 6. Code Jump -->
-          <li class="w-full"><a href="https://codejump.primarycodingleague.co.uk/" target="_blank" rel="noopener noreferrer" class="tile block rounded-2xl p-3 sm:p-3.5 text-center no-underline cursor-pointer flex flex-col h-full justify-center items-center" style="background: var(--card-color); border: 3px solid #81C784; color: var(--text-color);">
-            <div class="tile-icon float-icon mb-1.5 flex items-center justify-center"><img src="https://static.wixstatic.com/media/73207d_3bdf38923ae1498c980e312b03655ac8~mv2.png/v1/fill/w_120,h_133,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/_non_transparent_edited.png" alt="Code Jump" loading="lazy" style="max-width: 48px; max-height: 48px; width: 48px; height: 48px;" onerror="this.style.display='none'; this.parentElement.textContent='👾';">
-            </div><h2 class="portal-title text-sm sm:text-base font-bold leading-snug break-words">Code Jump</h2><p class="text-xs mt-0.5 opacity-70">Design your own game</p></a></li>
+          <!-- 6. Code AI -->
+          <li class="w-full"><a href="https://studio.code.org/courses/coursea-2025/units/1/lessons/2/levels/1?viewAs=Instructor" target="_blank" rel="noopener noreferrer" class="tile block rounded-2xl p-3 sm:p-3.5 text-center no-underline cursor-pointer flex flex-col justify-center items-center h-full" style="background: var(--card-color); border: 3px solid #81C784; color: var(--text-color);">
+              <div class="tile-icon float-icon mb-2 flex items-center justify-center"><img src="https://studio.code.org/assets/favicon-codeai-8e59258129f1e21e89951f46e4cbf6f463f595258701f724be8c8c9a8254940c.svg" alt="Code AI" loading="lazy" style="max-width: 48px; max-height: 48px; width: 48px; height: 48px;" onerror="this.style.display='none'; this.parentElement.textContent='🤖';">
+              </div><h2 class="portal-title text-sm sm:text-base font-bold leading-snug break-words">Code AI</h2><p class="text-xs mt-0.5 opacity-70">Drag &amp; Drop</p></a></li>
 
-          <!-- 7. Dance Mat Typing -->
-          <li class="w-full"><a href="https://www.bbc.co.uk/games/interactive/activity-dance-mat-typing" target="_blank" rel="noopener noreferrer" class="tile block rounded-2xl p-3 sm:p-3.5 text-center no-underline cursor-pointer flex flex-col h-full justify-center items-center" style="background: var(--card-color); border: 3px solid #2E7D32; color: var(--text-color);">
-            <div class="tile-icon float-icon mb-1.5 flex items-center justify-center"><img src="https://ezra.mpsomaha.org/sites/ezra.mpsomaha.org/files/styles/square/public/image/dancemat.png?itok=q5wUag4S" alt="Dance Mat Typing" loading="lazy" style="max-width: 48px; max-height: 48px; width: 48px; height: 48px;" onerror="this.style.display='none'; this.parentElement.textContent='⌨️';">
-            </div><h2 class="portal-title text-sm sm:text-base font-bold leading-snug break-words">Dance Mat Typing</h2><p class="text-xs mt-0.5 opacity-70">Typing skills</p></a></li>
+          <!-- 7. Code Jump -->
+          <li class="w-full"><a href="https://codejump.primarycodingleague.co.uk/" target="_blank" rel="noopener noreferrer" class="tile block rounded-2xl p-3 sm:p-3.5 text-center no-underline cursor-pointer flex flex-col justify-center items-center h-full" style="background: var(--card-color); border: 3px solid #2E7D32; color: var(--text-color);">
+              <div class="tile-icon float-icon mb-2 flex items-center justify-center"><img src="https://static.wixstatic.com/media/73207d_3bdf38923ae1498c980e312b03655ac8~mv2.png/v1/fill/w_120,h_133,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/_non_transparent_edited.png" alt="Code Jump" loading="lazy" style="max-width: 48px; max-height: 48px; width: 48px; height: 48px;" onerror="this.style.display='none'; this.parentElement.textContent='🦘';">
+              </div><h2 class="portal-title text-sm sm:text-base font-bold leading-snug break-words">Code Jump</h2><p class="text-xs mt-0.5 opacity-70">Design your own game</p></a></li>
 
-          <!-- 8. Google Search -->
-          <li class="w-full"><a href="https://google.com/" target="_blank" rel="noopener noreferrer" class="tile block rounded-2xl p-3 sm:p-3.5 text-center no-underline cursor-pointer flex flex-col h-full justify-center items-center" style="background: var(--card-color); border: 3px solid #81C784; color: var(--text-color);">
-            <div class="tile-icon float-icon mb-1.5 flex items-center justify-center"><img src="https://www.google.com/s2/favicons?sz=128&amp;domain_url=https%3A%2F%2Fgoogle.com" alt="Google Search" loading="lazy" style="max-width: 48px; max-height: 48px; width: 48px; height: 48px;" onerror="this.style.display='none'; this.parentElement.textContent='🔍';">
-            </div><h2 class="portal-title text-sm sm:text-base font-bold leading-snug break-words">Google Search</h2><p class="text-xs mt-0.5 opacity-70">Web search</p></a></li>
+          <!-- 8. Dance Mat Typing -->
+          <li class="w-full"><a href="https://www.bbc.co.uk/games/interactive/activity-dance-mat-typing" target="_blank" rel="noopener noreferrer" class="tile block rounded-2xl p-3 sm:p-3.5 text-center no-underline cursor-pointer flex flex-col justify-center items-center h-full" style="background: var(--card-color); border: 3px solid #81C784; color: var(--text-color);">
+              <div class="tile-icon float-icon mb-2 flex items-center justify-center"><img src="https://ezra.mpsomaha.org/sites/ezra.mpsomaha.org/files/styles/square/public/image/dancemat.png?itok=q5wUag4S" alt="Dance Mat Typing" loading="lazy" style="max-width: 48px; max-height: 48px; width: 48px; height: 48px;" onerror="this.style.display='none'; this.parentElement.textContent='⌨️';">
+              </div><h2 class="portal-title text-sm sm:text-base font-bold leading-snug break-words">Dance Mat Typing</h2><p class="text-xs mt-0.5 opacity-70">Typing skills</p></a></li>
 
-          <!-- 9. J2e Logo -->
-          <li class="w-full"><a href="https://j2e.com/logo" target="_blank" rel="noopener noreferrer" class="tile block rounded-2xl p-3 sm:p-3.5 text-center no-underline cursor-pointer flex flex-col h-full justify-center items-center" style="background: var(--card-color); border: 3px solid #2E7D32; color: var(--text-color);">
-            <div class="tile-icon float-icon mb-1.5 flex items-center justify-center"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSDwmr56rQrD6OSMgwdL5nb2otvN9p3h4tsQ&amp;s" alt="J2e Logo" loading="lazy" style="max-width: 48px; max-height: 48px; width: 48px; height: 48px;" onerror="this.style.display='none'; this.parentElement.textContent='🎯';">
-            </div><h2 class="portal-title text-sm sm:text-base font-bold leading-snug break-words">J2e Logo</h2><p class="text-xs mt-0.5 opacity-70">Programming</p></a></li>
+          <!-- 9. Google Search -->
+          <li class="w-full"><a href="https://google.com/" target="_blank" rel="noopener noreferrer" class="tile block rounded-2xl p-3 sm:p-3.5 text-center no-underline cursor-pointer flex flex-col justify-center items-center h-full" style="background: var(--card-color); border: 3px solid #2E7D32; color: var(--text-color);">
+              <div class="tile-icon float-icon mb-2 flex items-center justify-center"><img src="https://www.google.com/s2/favicons?sz=128&amp;domain_url=https%3A%2F%2Fgoogle.com" alt="Google" loading="lazy" style="max-width: 48px; max-height: 48px; width: 48px; height: 48px;" onerror="this.style.display='none'; this.parentElement.textContent='🔍';">
+              </div><h2 class="portal-title text-sm sm:text-base font-bold leading-snug break-words">Google Search</h2><p class="text-xs mt-0.5 opacity-70">Web search</p></a></li>
 
-          <!-- 10. Libresoft -->
-          <li class="w-full"><a href="https://library.libresoft.co.uk/8252269-9ud884ax0gyaau7etx1a-sps/" target="_blank" rel="noopener noreferrer" class="tile block rounded-2xl p-3 sm:p-3.5 text-center no-underline cursor-pointer flex flex-col h-full justify-center items-center" style="background: var(--card-color); border: 3px solid #81C784; color: var(--text-color);">
-            <div class="tile-icon float-icon mb-1.5 flex items-center justify-center"><img src="https://www.heworthgrange.org/_site/data/files/images/auto_upload/page/DE0653C44B650254C9DBBC065B55B1AF.png" alt="Libresoft" loading="lazy" style="max-width: 48px; max-height: 48px; width: 48px; height: 48px;" onerror="this.style.display='none'; this.parentElement.textContent='📚';">
-            </div><h2 class="portal-title text-sm sm:text-base font-bold leading-snug break-words">Libresoft</h2><p class="text-xs mt-0.5 opacity-70">Library books</p></a></li>
+          <!-- 10. J2e Logo -->
+          <li class="w-full"><a href="https://j2e.com/logo" target="_blank" rel="noopener noreferrer" class="tile block rounded-2xl p-3 sm:p-3.5 text-center no-underline cursor-pointer flex flex-col justify-center items-center h-full" style="background: var(--card-color); border: 3px solid #81C784; color: var(--text-color);">
+              <div class="tile-icon float-icon mb-2 flex items-center justify-center"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSDwmr56rQrD6OSMgwdL5nb2otvN9p3h4tsQ&amp;s" alt="J2e Logo" loading="lazy" style="max-width: 48px; max-height: 48px; width: 48px; height: 48px;" onerror="this.style.display='none'; this.parentElement.textContent='🎯';">
+              </div><h2 class="portal-title text-sm sm:text-base font-bold leading-snug break-words">J2e Logo</h2><p class="text-xs mt-0.5 opacity-70">Programming</p></a></li>
 
-          <!-- 11. Literacy Gold -->
-          <li class="w-full"><a href="https://literacygold.co.uk/Account/Login" target="_blank" rel="noopener noreferrer" class="tile block rounded-2xl p-3 sm:p-3.5 text-center no-underline cursor-pointer flex flex-col h-full justify-center items-center" style="background: var(--card-color); border: 3px solid #2E7D32; color: var(--text-color);">
-            <div class="tile-icon float-icon mb-1.5 flex items-center justify-center"><img src="https://www.google.com/s2/favicons?sz=128&amp;domain_url=https%3A%2F%2Fwww.literacygold.co.uk" alt="Literacy Gold" loading="lazy" style="max-width: 48px; max-height: 48px; width: 48px; height: 48px;" onerror="this.style.display='none'; this.parentElement.textContent='📖';">
-            </div><h2 class="portal-title text-sm sm:text-base font-bold leading-snug break-words">Literacy Gold</h2><p class="text-xs mt-0.5 opacity-70">Reading &amp; writing</p></a></li>
+          <!-- 11. Libresoft -->
+          <li class="w-full"><a href="https://library.libresoft.co.uk/8252269-9ud884ax0gyaau7etx1a-sps/" target="_blank" rel="noopener noreferrer" class="tile block rounded-2xl p-3 sm:p-3.5 text-center no-underline cursor-pointer flex flex-col justify-center items-center h-full" style="background: var(--card-color); border: 3px solid #2E7D32; color: var(--text-color);">
+              <div class="tile-icon float-icon mb-2 flex items-center justify-center"><img src="https://www.heworthgrange.org/_site/data/files/images/auto_upload/page/DE0653C44B650254C9DBBC065B55B1AF.png" alt="Libresoft" loading="lazy" style="max-width: 48px; max-height: 48px; width: 48px; height: 48px;" onerror="this.style.display='none'; this.parentElement.textContent='📚';">
+              </div><h2 class="portal-title text-sm sm:text-base font-bold leading-snug break-words">Libresoft</h2><p class="text-xs mt-0.5 opacity-70">Library books</p></a></li>
 
-          <!-- 12. Mathletics -->
-          <li class="w-full"><a href="https://login.mathletics.com/" target="_blank" rel="noopener noreferrer" class="tile block rounded-2xl p-3 sm:p-3.5 text-center no-underline cursor-pointer flex flex-col h-full justify-center items-center" style="background: var(--card-color); border: 3px solid #81C784; color: var(--text-color);">
-            <div class="tile-icon float-icon mb-1.5 flex items-center justify-center"><img src="https://www.google.com/s2/favicons?sz=64&amp;domain_url=https%3A%2F%2Flogin.mathletics.com%2F" alt="Mathletics" loading="lazy" style="max-width: 48px; max-height: 48px; width: 48px; height: 48px;" onerror="this.style.display='none'; this.parentElement.textContent='🔢';">
-            </div><h2 class="portal-title text-sm sm:text-base font-bold leading-snug break-words">Mathletics</h2><p class="text-xs mt-0.5 opacity-70">Maths homework</p></a></li>
+          <!-- 12. Literacy Gold -->
+          <li class="w-full"><a href="https://literacygold.co.uk/Account/Login" target="_blank" rel="noopener noreferrer" class="tile block rounded-2xl p-3 sm:p-3.5 text-center no-underline cursor-pointer flex flex-col justify-center items-center h-full" style="background: var(--card-color); border: 3px solid #81C784; color: var(--text-color);">
+              <div class="tile-icon float-icon mb-2 flex items-center justify-center"><img src="https://www.google.com/s2/favicons?sz=128&amp;domain_url=https%3A%2F%2Fwww.literacygold.co.uk" alt="Literacy Gold" loading="lazy" style="max-width: 48px; max-height: 48px; width: 48px; height: 48px;" onerror="this.style.display='none'; this.parentElement.textContent='📖';">
+              </div><h2 class="portal-title text-sm sm:text-base font-bold leading-snug break-words">Literacy Gold</h2><p class="text-xs mt-0.5 opacity-70">Reading &amp; writing</p></a></li>
 
-          <!-- 13. Micro:bit MakeCode -->
-          <li class="w-full"><a href="https://makecode.microbit.org/" target="_blank" rel="noopener noreferrer" class="tile block rounded-2xl p-3 sm:p-3.5 text-center no-underline cursor-pointer flex flex-col h-full justify-center items-center" style="background: var(--card-color); border: 3px solid #2E7D32; color: var(--text-color);">
-            <div class="tile-icon float-icon mb-1.5 flex items-center justify-center"><img src="https://cdn.makecode.com/blob/c147b014964656d6dec929b97636aa200706794e//static/icons/maskable-icon-640x640.png" alt="Micro:bit MakeCode" loading="lazy" style="max-width: 48px; max-height: 48px; width: 48px; height: 48px;" onerror="this.style.display='none'; this.parentElement.textContent='🤖';">
-            </div><h2 class="portal-title text-sm sm:text-base font-bold leading-snug break-words">Micro:bit MakeCode</h2><p class="text-xs mt-0.5 opacity-70">Programming micro:bits</p></a></li>
+          <!-- 13. Mathletics -->
+          <li class="w-full"><a href="https://login.mathletics.com/" target="_blank" rel="noopener noreferrer" class="tile block rounded-2xl p-3 sm:p-3.5 text-center no-underline cursor-pointer flex flex-col justify-center items-center h-full" style="background: var(--card-color); border: 3px solid #2E7D32; color: var(--text-color);">
+              <div class="tile-icon float-icon mb-2 flex items-center justify-center"><img src="https://www.google.com/s2/favicons?sz=64&amp;domain_url=https%3A%2F%2Flogin.mathletics.com%2F" alt="Mathletics" loading="lazy" style="max-width: 48px; max-height: 48px; width: 48px; height: 48px;" onerror="this.style.display='none'; this.parentElement.textContent='🔢';">
+              </div><h2 class="portal-title text-sm sm:text-base font-bold leading-snug break-words">Mathletics</h2><p class="text-xs mt-0.5 opacity-70">Maths homework</p></a></li>
 
-          <!-- 14. PaintZ -->
-          <li class="w-full"><a href="https://paintz.app/" target="_blank" rel="noopener noreferrer" class="tile block rounded-2xl p-3 sm:p-3.5 text-center no-underline cursor-pointer flex flex-col h-full justify-center items-center" style="background: var(--card-color); border: 3px solid #81C784; color: var(--text-color);">
-            <div class="tile-icon float-icon mb-1.5 flex items-center justify-center"><img src="https://www.google.com/s2/favicons?sz=128&amp;domain_url=https%3A%2F%2Fwww.paintz.app" alt="PaintZ" loading="lazy" style="max-width: 48px; max-height: 48px; width: 48px; height: 48px;" onerror="this.style.display='none'; this.parentElement.textContent='🖼️';">
-            </div><h2 class="portal-title text-sm sm:text-base font-bold leading-snug break-words">PaintZ</h2><p class="text-xs mt-0.5 opacity-70">Art &amp; drawing</p></a></li>
+          <!-- 14. Micro:bit MakeCode -->
+          <li class="w-full"><a href="https://makecode.microbit.org/" target="_blank" rel="noopener noreferrer" class="tile block rounded-2xl p-3 sm:p-3.5 text-center no-underline cursor-pointer flex flex-col justify-center items-center h-full" style="background: var(--card-color); border: 3px solid #81C784; color: var(--text-color);">
+              <div class="tile-icon float-icon mb-2 flex items-center justify-center"><img src="https://cdn.makecode.com/blob/c147b014964656d6dec929b97636aa200706794e//static/icons/maskable-icon-640x640.png" alt="Micro:bit MakeCode" loading="lazy" style="max-width: 48px; max-height: 48px; width: 48px; height: 48px;" onerror="this.style.display='none'; this.parentElement.textContent='💡';">
+              </div><h2 class="portal-title text-sm sm:text-base font-bold leading-snug break-words">Micro:bit MakeCode</h2><p class="text-xs mt-0.5 opacity-70">Programming micro:bits</p></a></li>
 
-          <!-- 15. Scratch -->
-          <li class="w-full"><a href="https://scratch.mit.edu/projects/editor" target="_blank" rel="noopener noreferrer" class="tile block rounded-2xl p-3 sm:p-3.5 text-center no-underline cursor-pointer flex flex-col h-full justify-center items-center" style="background: var(--card-color); border: 3px solid #2E7D32; color: var(--text-color);">
-            <div class="tile-icon float-icon mb-1.5 flex items-center justify-center"><img src="https://seeklogo.com/images/S/scratch-logo-B13B10E544-seeklogo.com.png" alt="Scratch" loading="lazy" style="max-width: 48px; max-height: 48px; width: 48px; height: 48px;" onerror="this.style.display='none'; this.parentElement.textContent='💻';">
-            </div><h2 class="portal-title text-sm sm:text-base font-bold leading-snug break-words">Scratch</h2><p class="text-xs mt-0.5 opacity-70">Coding</p></a></li>
+          <!-- 15. PaintZ -->
+          <li class="w-full"><a href="https://paintz.app/" target="_blank" rel="noopener noreferrer" class="tile block rounded-2xl p-3 sm:p-3.5 text-center no-underline cursor-pointer flex flex-col justify-center items-center h-full" style="background: var(--card-color); border: 3px solid #2E7D32; color: var(--text-color);">
+              <div class="tile-icon float-icon mb-2 flex items-center justify-center"><img src="https://www.google.com/s2/favicons?sz=128&amp;domain_url=https%3A%2F%2Fwww.paintz.app" alt="PaintZ" loading="lazy" style="max-width: 48px; max-height: 48px; width: 48px; height: 48px;" onerror="this.style.display='none'; this.parentElement.textContent='🖼️';">
+              </div><h2 class="portal-title text-sm sm:text-base font-bold leading-snug break-words">PaintZ</h2><p class="text-xs mt-0.5 opacity-70">Art &amp; drawing</p></a></li>
 
-          <!-- 16. Seesaw -->
-          <li class="w-full"><a href="https://app.seesaw.me/" target="_blank" rel="noopener noreferrer" class="tile block rounded-2xl p-3 sm:p-3.5 text-center no-underline cursor-pointer flex flex-col h-full justify-center items-center" style="background: var(--card-color); border: 3px solid #81C784; color: var(--text-color);">
-            <div class="tile-icon float-icon mb-1.5 flex items-center justify-center"><img src="https://www.google.com/s2/favicons?sz=64&amp;domain_url=https%3A%2F%2Fseesaw.com" alt="Seesaw" loading="lazy" style="max-width: 48px; max-height: 48px; width: 48px; height: 48px;" onerror="this.style.display='none'; this.parentElement.textContent='📱';">
-            </div><h2 class="portal-title text-sm sm:text-base font-bold leading-snug break-words">Seesaw</h2><p class="text-xs mt-0.5 opacity-70">Portfolio</p></a></li>
+          <!-- 16. Scratch -->
+          <li class="w-full"><a href="https://scratch.mit.edu/projects/editor" target="_blank" rel="noopener noreferrer" class="tile block rounded-2xl p-3 sm:p-3.5 text-center no-underline cursor-pointer flex flex-col justify-center items-center h-full" style="background: var(--card-color); border: 3px solid #81C784; color: var(--text-color);">
+              <div class="tile-icon float-icon mb-2 flex items-center justify-center"><img src="https://seeklogo.com/images/S/scratch-logo-B13B10E544-seeklogo.com.png" alt="Scratch" loading="lazy" style="max-width: 48px; max-height: 48px; width: 48px; height: 48px;" onerror="this.style.display='none'; this.parentElement.textContent='💻';">
+              </div><h2 class="portal-title text-sm sm:text-base font-bold leading-snug break-words">Scratch</h2><p class="text-xs mt-0.5 opacity-70">Coding</p></a></li>
 
-          <!-- 17. Stokenchurch -->
-          <li class="w-full"><a href="https://www.stokenchurchprimary.co.uk/" target="_blank" rel="noopener noreferrer" class="tile block rounded-2xl p-3 sm:p-3.5 text-center no-underline cursor-pointer flex flex-col h-full justify-center items-center" style="background: var(--card-color); border: 3px solid #2E7D32; color: var(--text-color);">
-            <div class="tile-icon float-icon mb-1.5 flex items-center justify-center"><img src="https://www.google.com/s2/favicons?sz=64&amp;domain_url=https%3A%2F%2Fwww.stokenchurchprimary.co.uk%2F" alt="Stokenchurch" loading="lazy" style="max-width: 48px; max-height: 48px; width: 48px; height: 48px;" onerror="this.style.display='none'; this.parentElement.textContent='🏫';">
-            </div><h2 class="portal-title text-sm sm:text-base font-bold leading-snug break-words">Stokenchurch</h2><p class="text-xs mt-0.5 opacity-70">School website</p></a></li>
+          <!-- 17. Seesaw -->
+          <li class="w-full"><a href="https://app.seesaw.me/" target="_blank" rel="noopener noreferrer" class="tile block rounded-2xl p-3 sm:p-3.5 text-center no-underline cursor-pointer flex flex-col justify-center items-center h-full" style="background: var(--card-color); border: 3px solid #2E7D32; color: var(--text-color);">
+              <div class="tile-icon float-icon mb-2 flex items-center justify-center"><img src="https://www.google.com/s2/favicons?sz=64&amp;domain_url=https%3A%2F%2Fseesaw.com" alt="Seesaw" loading="lazy" style="max-width: 48px; max-height: 48px; width: 48px; height: 48px;" onerror="this.style.display='none'; this.parentElement.textContent='📱';">
+              </div><h2 class="portal-title text-sm sm:text-base font-bold leading-snug break-words">Seesaw</h2><p class="text-xs mt-0.5 opacity-70">Portfolio</p></a></li>
 
-          <!-- 18. Tate Kids -->
-          <li class="w-full"><a href="https://www.tate.org.uk/kids" target="_blank" rel="noopener noreferrer" class="tile block rounded-2xl p-3 sm:p-3.5 text-center no-underline cursor-pointer flex flex-col h-full justify-center items-center" style="background: var(--card-color); border: 3px solid #81C784; color: var(--text-color);">
-            <div class="tile-icon float-icon mb-1.5 flex items-center justify-center"><img src="https://www.tate.org.uk/favicon.ico" alt="Tate Kids" loading="lazy" style="max-width: 48px; max-height: 48px; width: 48px; height: 48px;" onerror="this.style.display='none'; this.parentElement.textContent='🎨';">
-            </div><h2 class="portal-title text-sm sm:text-base font-bold leading-snug break-words">Tate Kids</h2><p class="text-xs mt-0.5 opacity-70">Create art</p></a></li>
+          <!-- 18. Stokenchurch -->
+          <li class="w-full"><a href="https://www.stokenchurchprimary.co.uk/" target="_blank" rel="noopener noreferrer" class="tile block rounded-2xl p-3 sm:p-3.5 text-center no-underline cursor-pointer flex flex-col justify-center items-center h-full" style="background: var(--card-color); border: 3px solid #81C784; color: var(--text-color);">
+              <div class="tile-icon float-icon mb-2 flex items-center justify-center"><img src="https://www.google.com/s2/favicons?sz=64&amp;domain_url=https%3A%2F%2Fwww.stokenchurchprimary.co.uk%2F" alt="School Website" loading="lazy" style="max-width: 48px; max-height: 48px; width: 48px; height: 48px;" onerror="this.style.display='none'; this.parentElement.textContent='🏫';">
+              </div><h2 class="portal-title text-sm sm:text-base font-bold leading-snug break-words">Stokenchurch</h2><p class="text-xs mt-0.5 opacity-70">School website</p></a></li>
 
-          <!-- 19. Timestables -->
-          <li class="w-full"><a href="https://www.timestables.co.uk/" target="_blank" rel="noopener noreferrer" class="tile block rounded-2xl p-3 sm:p-3.5 text-center no-underline cursor-pointer flex flex-col h-full justify-center items-center" style="background: var(--card-color); border: 3px solid #2E7D32; color: var(--text-color);">
-            <div class="tile-icon float-icon mb-1.5 flex items-center justify-center"><img src="https://www.google.com/s2/favicons?sz=64&amp;domain_url=https%3A%2F%2Fwww.timestables.co.uk%2F" alt="Timestables" loading="lazy" style="max-width: 48px; max-height: 48px; width: 48px; height: 48px;" onerror="this.style.display='none'; this.parentElement.textContent='🔢';">
-            </div><h2 class="portal-title text-sm sm:text-base font-bold leading-snug break-words">Timestables</h2><p class="text-xs mt-0.5 opacity-70">Maths tables</p></a></li>
+          <!-- 19. Tate Kids -->
+          <li class="w-full"><a href="https://www.tate.org.uk/kids" target="_blank" rel="noopener noreferrer" class="tile block rounded-2xl p-3 sm:p-3.5 text-center no-underline cursor-pointer flex flex-col justify-center items-center h-full" style="background: var(--card-color); border: 3px solid #2E7D32; color: var(--text-color);">
+              <div class="tile-icon float-icon mb-2 flex items-center justify-center"><img src="https://www.tate.org.uk/favicon.ico" alt="Tate Kids" loading="lazy" style="max-width: 48px; max-height: 48px; width: 48px; height: 48px;" onerror="this.style.display='none'; this.parentElement.textContent='🎨';">
+              </div><h2 class="portal-title text-sm sm:text-base font-bold leading-snug break-words">Tate Kids</h2><p class="text-xs mt-0.5 opacity-70">Create art</p></a></li>
 
-          <!-- 20. TTRockstars -->
-          <li class="w-full"><a href="https://play.ttrockstars.com/" target="_blank" rel="noopener noreferrer" class="tile block rounded-2xl p-3 sm:p-3.5 text-center no-underline cursor-pointer flex flex-col h-full justify-center items-center" style="background: var(--card-color); border: 3px solid #81C784; color: var(--text-color);">
-            <div class="tile-icon float-icon mb-1.5 flex items-center justify-center"><img src="https://www.google.com/s2/favicons?sz=128&amp;domain_url=https%3A%2F%2Fplay.ttrockstars.com%2F" alt="TTRockstars" loading="lazy" style="max-width: 48px; max-height: 48px; width: 48px; height: 48px;" onerror="this.style.display='none'; this.parentElement.textContent='⭐';">
-            </div><h2 class="portal-title text-sm sm:text-base font-bold leading-snug break-words">TTRockstars</h2><p class="text-xs mt-0.5 opacity-70">Times tables</p></a></li>
+          <!-- 20. Timestables -->
+          <li class="w-full"><a href="https://www.timestables.co.uk/" target="_blank" rel="noopener noreferrer" class="tile block rounded-2xl p-3 sm:p-3.5 text-center no-underline cursor-pointer flex flex-col justify-center items-center h-full" style="background: var(--card-color); border: 3px solid #81C784; color: var(--text-color);">
+              <div class="tile-icon float-icon mb-2 flex items-center justify-center"><img src="https://www.google.com/s2/favicons?sz=64&amp;domain_url=https%3A%2F%2Fwww.timestables.co.uk%2F" alt="Timestables" loading="lazy" style="max-width: 48px; max-height: 48px; width: 48px; height: 48px;" onerror="this.style.display='none'; this.parentElement.textContent='🔢';">
+              </div><h2 class="portal-title text-sm sm:text-base font-bold leading-snug break-words">Timestables</h2><p class="text-xs mt-0.5 opacity-70">Maths tables</p></a></li>
 
-          <!-- 21. Twinkl Go -->
-          <li class="w-full"><a href="https://twinkl.com/learn" target="_blank" rel="noopener noreferrer" class="tile block rounded-2xl p-3 sm:p-3.5 text-center no-underline cursor-pointer flex flex-col h-full justify-center items-center" style="background: var(--card-color); border: 3px solid #2E7D32; color: var(--text-color);">
-            <div class="tile-icon float-icon mb-1.5 flex items-center justify-center"><img src="https://www.google.com/s2/favicons?sz=128&amp;domain_url=https%3A%2F%2Ftwinkl.com" alt="Twinkl Go" loading="lazy" style="max-width: 48px; max-height: 48px; width: 48px; height: 48px;" onerror="this.style.display='none'; this.parentElement.textContent='📚';">
-            </div><h2 class="portal-title text-sm sm:text-base font-bold leading-snug break-words">Twinkl Go</h2><p class="text-xs mt-0.5 opacity-70">Learning resources</p></a></li>
+          <!-- 21. TTRockstars -->
+          <li class="w-full"><a href="https://play.ttrockstars.com/" target="_blank" rel="noopener noreferrer" class="tile block rounded-2xl p-3 sm:p-3.5 text-center no-underline cursor-pointer flex flex-col justify-center items-center h-full" style="background: var(--card-color); border: 3px solid #2E7D32; color: var(--text-color);">
+              <div class="tile-icon float-icon mb-2 flex items-center justify-center"><img src="https://www.google.com/s2/favicons?sz=128&amp;domain_url=https%3A%2F%2Fplay.ttrockstars.com%2F" alt="TTRockstars" loading="lazy" style="max-width: 48px; max-height: 48px; width: 48px; height: 48px;" onerror="this.style.display='none'; this.parentElement.textContent='⭐';">
+              </div><h2 class="portal-title text-sm sm:text-base font-bold leading-snug break-words">TTRockstars</h2><p class="text-xs mt-0.5 opacity-70">Times tables</p></a></li>
 
-          <!-- 22. Typing Club -->
-          <li class="w-full"><a href="https://stokenchurch.typingclub.com/" target="_blank" rel="noopener noreferrer" class="tile block rounded-2xl p-3 sm:p-3.5 text-center no-underline cursor-pointer flex flex-col h-full justify-center items-center" style="background: var(--card-color); border: 3px solid #81C784; color: var(--text-color);">
-            <div class="tile-icon float-icon mb-1.5 flex items-center justify-center"><img src="https://www.google.com/s2/favicons?sz=256&amp;domain_url=https%3A%2F%2Fwww.edclub.com%2F" alt="Typing Club" loading="lazy" style="max-width: 48px; max-height: 48px; width: 48px; height: 48px;" onerror="this.style.display='none'; this.parentElement.textContent='⌨️';">
-            </div><h2 class="portal-title text-sm sm:text-base font-bold leading-snug break-words">Typing Club</h2><p class="text-xs mt-0.5 opacity-70">Practise typing skills</p></a></li>
+          <!-- 22. Twinkl Go -->
+          <li class="w-full"><a href="https://twinkl.com/learn" target="_blank" rel="noopener noreferrer" class="tile block rounded-2xl p-3 sm:p-3.5 text-center no-underline cursor-pointer flex flex-col justify-center items-center h-full" style="background: var(--card-color); border: 3px solid #81C784; color: var(--text-color);">
+              <div class="tile-icon float-icon mb-2 flex items-center justify-center"><img src="https://www.google.com/s2/favicons?sz=128&amp;domain_url=https%3A%2F%2Ftwinkl.com" alt="Twinkl Go" loading="lazy" style="max-width: 48px; max-height: 48px; width: 48px; height: 48px;" onerror="this.style.display='none'; this.parentElement.textContent='📚';">
+              </div><h2 class="portal-title text-sm sm:text-base font-bold leading-snug break-words">Twinkl Go</h2><p class="text-xs mt-0.5 opacity-70">Learning resources</p></a></li>
 
-          <!-- 23. Typing Games -->
-          <li class="w-full"><a href="https://www.typinggames.zone/type-the-alphabet" target="_blank" rel="noopener noreferrer" class="tile block rounded-2xl p-3 sm:p-3.5 text-center no-underline cursor-pointer flex flex-col h-full justify-center items-center" style="background: var(--card-color); border: 3px solid #2E7D32; color: var(--text-color);">
-            <div class="tile-icon float-icon mb-1.5 flex items-center justify-center"><img src="https://www.typinggames.zone/web/apple-touch-icon.png" alt="Typing Games" loading="lazy" style="max-width: 48px; max-height: 48px; width: 48px; height: 48px;" onerror="this.style.display='none'; this.parentElement.textContent='⌨️';">
-            </div><h2 class="portal-title text-sm sm:text-base font-bold leading-snug break-words">Typing Games</h2><p class="text-xs mt-0.5 opacity-70">Type the alphabet</p></a></li>
+          <!-- 23. Typing Club -->
+          <li class="w-full"><a href="https://stokenchurch.typingclub.com/" target="_blank" rel="noopener noreferrer" class="tile block rounded-2xl p-3 sm:p-3.5 text-center no-underline cursor-pointer flex flex-col justify-center items-center h-full" style="background: var(--card-color); border: 3px solid #2E7D32; color: var(--text-color);">
+              <div class="tile-icon float-icon mb-2 flex items-center justify-center"><img src="https://www.google.com/s2/favicons?sz=256&amp;domain_url=https%3A%2F%2Fwww.edclub.com%2F" alt="Typing Club" loading="lazy" style="max-width: 48px; max-height: 48px; width: 48px; height: 48px;" onerror="this.style.display='none'; this.parentElement.textContent='⌨️';">
+              </div><h2 class="portal-title text-sm sm:text-base font-bold leading-snug break-words">Typing Club</h2><p class="text-xs mt-0.5 opacity-70">Practise typing skills</p></a></li>
 
-          <!-- 24. Typing Games Zone -->
-          <li class="w-full"><a href="https://www.typinggames.zone/" target="_blank" rel="noopener noreferrer" class="tile block rounded-2xl p-3 sm:p-3.5 text-center no-underline cursor-pointer flex flex-col h-full justify-center items-center" style="background: var(--card-color); border: 3px solid #81C784; color: var(--text-color);">
-            <div class="tile-icon float-icon mb-1.5 flex items-center justify-center"><img src="https://www.typinggames.zone/web/apple-touch-icon.png" alt="Typing Games Zone" loading="lazy" style="max-width: 48px; max-height: 48px; width: 48px; height: 48px;" onerror="this.style.display='none'; this.parentElement.textContent='🔤';">
-            </div><h2 class="portal-title text-sm sm:text-base font-bold leading-snug break-words">Typing Games Zone</h2><p class="text-xs mt-0.5 opacity-70">Fun typing practice</p></a></li>
+          <!-- 24. Typing Games -->
+          <li class="w-full"><a href="https://www.typinggames.zone/type-the-alphabet" target="_blank" rel="noopener noreferrer" class="tile block rounded-2xl p-3 sm:p-3.5 text-center no-underline cursor-pointer flex flex-col justify-center items-center h-full" style="background: var(--card-color); border: 3px solid #81C784; color: var(--text-color);">
+              <div class="tile-icon float-icon mb-2 flex items-center justify-center"><img src="https://www.typinggames.zone/web/apple-touch-icon.png" alt="Typing Games" loading="lazy" style="max-width: 48px; max-height: 48px; width: 48px; height: 48px;" onerror="this.style.display='none'; this.parentElement.textContent='⌨️';">
+              </div><h2 class="portal-title text-sm sm:text-base font-bold leading-snug break-words">Typing Games</h2><p class="text-xs mt-0.5 opacity-70">Type the alphabet</p></a></li>
 
          </ul>
         </nav>
       </main>
 
-      <footer class="text-center mt-6 pb-4">
-        <p class="text-base sm:text-lg font-black" style="line-height: 1.5; letter-spacing: 0.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"><span style="color: #81C784;">READY</span> <span style="color: #FFFFFF;"> · </span> <span style="color: #FFFFFF;">RESPECTFUL</span> <span style="color: #81C784;"> · </span> <span style="color: #81C784;">SAFE</span> <span style="color: #FFFFFF;"> · </span> <span style="color: #FFFFFF;">RESILIENT</span> <span style="color: #81C784;"> · </span> <span style="color: #81C784;">CURIOUS</span> <span style="color: #FFFFFF;"> · </span> <span style="color: #FFFFFF;">CONFIDENT</span> <span style="color: #81C784;"> · </span> <span style="color: #81C784;">INDEPENDENT</span> <span style="color: #FFFFFF;"> · </span> <span style="color: #FFFFFF;">SUCCESSFUL</span></p>
+      <!-- FOOTER -->
+      <footer class="text-center mt-3 pb-2">
+        <p class="text-sm sm:text-base font-black" style="line-height: 1.6; letter-spacing: 0.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+          <span style="color: #81C784;">READY</span> <span style="color: #FFFFFF;"> · </span> <span style="color: #FFFFFF;">RESPECTFUL</span> <span style="color: #81C784;"> · </span> <span style="color: #81C784;">SAFE</span> <span style="color: #FFFFFF;"> · </span> <span style="color: #FFFFFF;">RESILIENT</span> <span style="color: #81C784;"> · </span> <span style="color: #81C784;">CURIOUS</span> <span style="color: #FFFFFF;"> · </span> <span style="color: #FFFFFF;">CONFIDENT</span> <span style="color: #81C784;"> · </span> <span style="color: #81C784;">INDEPENDENT</span> <span style="color: #FFFFFF;"> · </span> <span style="color: #FFFFFF;">SUCCESSFUL</span>
+        </p>
       </footer>
+
     </div>
   </div>
 
@@ -285,8 +291,6 @@
         defaultConfig: config,
         onConfigChange: async (newConfig) => {
           if(newConfig.background_color) document.getElementById('app-wrapper').style.backgroundColor = newConfig.background_color;
-          if(newConfig.page_title) document.getElementById('page-title').textContent = newConfig.page_title;
-          if(newConfig.page_subtitle) document.getElementById('page-subtitle').textContent = newConfig.page_subtitle;
         },
         mapToCapabilities: (c) => ({ recolorables: [] }),
         mapToEditPanelValues: (c) => new Map([
